@@ -18,7 +18,6 @@ git clone https://github.com/rafalimao/aqbank_teste
 
 2. Instale as dependências do Composer:
 ```bash
-cd sistema-gerenciamento-biblioteca
 composer install
 ```
 
