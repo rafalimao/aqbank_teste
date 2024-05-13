@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Emprestimo;
+use App\Models\User;
+use App\Models\Livro;
 use Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\LivroEmprestado;
 
 class EmprestimoController extends Controller
 {
@@ -44,7 +48,12 @@ class EmprestimoController extends Controller
             'data_emprestimo' => $request->data_emprestimo,
             'data_devolucao' => $request->data_devolucao,
         ]);
-
+        
+        // Fila para o envio de email
+        $livro = Livro::find($request->livro_id);
+        $usuario = User::find($request->user_id);
+        Mail::to($usuario)->queue(new LivroEmprestado($livro));
+                
         return response()->json($emprestimo, 201);
     }
 
