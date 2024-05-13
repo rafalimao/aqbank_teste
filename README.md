@@ -12,6 +12,7 @@ Este é um sistema de gerenciamento de biblioteca desenvolvido com o framework L
 
 1. Clone o repositório:
 
+```bash
 git clone https://github.com/rafalimao/aqbank_teste
 
 2. Instale as dependências do Composer:
@@ -25,7 +26,7 @@ composer install
 
 php artisan key:generate
 
-5.Execute as migrações do banco de dados para criar as tabelas necessárias:
+5. Execute as migrações do banco de dados para criar as tabelas necessárias:
 
 php artisan migrate
 
@@ -35,11 +36,11 @@ php artisan serve
 
 Acesse o sistema em http://localhost:8000.
 
-
 ## Testes
 
 Para executar os testes, use o seguinte comando:
 
+```bash
 php artisan test
 
 ## Licença
